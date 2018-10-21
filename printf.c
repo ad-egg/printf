@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			while (conversionspecs[spec_it].spec != NULL)
 			{
 				if (format[form_it] == *(conversionspecs[spec_it]))
-					conversionspecs[spec_it].f(form_args);
+					conversionspecs[spec_it].f(form_args, buffer, &buff_it);
 				spec_it++;
 			}
 			form_it++;
