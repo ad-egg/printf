@@ -10,9 +10,49 @@
  */
 int _printf(const char *format, ...)
 {
-	int buffer_size;
+	va_list form_args;
 
-	buffer_size = find_buffer_size(format); 
-	write(1, format, buffer_size);
+	unsigned int form_it = 0, buff_it = 0;
+	char *buffer = malloc(1024);
+	int conv_flag = 0, spec_it;
+
+	find_t conversionspecs[] = {
+		{"c", c_spec},
+		{"s", s_spec},
+		{"d", d_spec},
+		{"i", i_spec},
+	};
+
+	va_start(form_args, format);
+	while ((format != NULL) && (format[form_it] != '\0'))
+	{
+		if (format[form_it] == '%')
+		{
+			conv_flag = 1;
+			form_it++;
+		}
+		else if (flag == 1)
+		{
+			spec_it = 0;
+			while (conversionspecs[spec_it].spec != NULL)
+			{
+				if (format[form_it] == *(conversionspecs[spec_it]))
+					conversionspecs[spec_it].f(form_args);
+				spec_it++;
+			}
+			form_it++;
+		}
+		else
+		{
+			buffer[buff_it] = format[form_it];
+			buff_it++;
+			form_it++;
+		}
+	}
+	va_end(form_args);
+
+
+	write(1, format, buffer_it);
+
 	return (buffer_size);
 }
