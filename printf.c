@@ -11,10 +11,9 @@
 int _printf(const char *format, ...)
 {
 	va_list form_args;
-
-	unsigned int form_it = 0, buff_it = 0;
+	unsigned int form_it = 0, buff_it = 0, spec_it;
 	char *buffer = malloc(1024);
-	int conv_flag = 0, spec_it;
+	int conv_flag = 0;
 
 	find_t conversionspecs[] = {
 		{"c", c_spec},
