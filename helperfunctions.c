@@ -14,5 +14,5 @@
 
 	i++;
 	buffer[i] = (char)va_arg(form_args, int);
-	*buffer_it++;
+	*buff_it = *buff_it + 1;
 }
