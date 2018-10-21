@@ -3,11 +3,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 int _printf(const char *format, ...);
-unsigned int find_buffer_size(const char *str);
-void c_spec(va_list);
-void s_spec(va_list);
-void i_spec(va_list);
-void d_spec(va_list);
+void c_spec(va_list, char *buffer, int *buff_it);
+void s_spec(va_list, char *buffer, int *buff_it);
+void i_spec(va_list, char *buffer, int *buff_it);
+void d_spec(va_list, char *buffer, int *buff_it);
 /**
  * struct spec_finder - Stores format specifier and respective func
  * @spec: Format sepcifier
