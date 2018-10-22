@@ -42,13 +42,13 @@ void itoa(int n, char *s)
 
 	i = 0;
 
-	if ((o = n) < 0)
+	if (n < 0)
 		n2 = (n * (-1));
 	else
 		n2 = n;
 	while ((n2 /= 10) > 0)
 		s[i++] = ((n2 % 10) + '0');
-	if (o < 0)
+	if (n < 0)
 		s[i++] = '-';
 	s[i] = '\0';
 
