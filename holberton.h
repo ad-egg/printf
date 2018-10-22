@@ -15,6 +15,6 @@ void d_spec(va_list, char *buffer, unsigned int *buff_it);
 typedef struct spec_finder
 {
 	char *spec;
-	void (*f)(va_list);
+	void (*f)(va_list, char *, unsigned int *);
 } find_t;
 #endif
