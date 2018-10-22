@@ -16,6 +16,9 @@ Takes [\fIARGUMENT\fR] from standard input and prints it to standard output. If 
 .SH RETURN VALUE
 \fB_printf\fR returns the number of characters printed, excluding the null byte used to end output to strings.
 
+.SH NOTES
+\fB_printf\fR handles the following format specifiers: \fB%c\fR, \fB%s\fR, \fB%d\fR, \fB%i\fR.
+
 .SH EXAMPLES
 To print "Hello, world" followed by a newline, use
 .br
@@ -32,9 +35,6 @@ To print an integer using a format specifier followed by a newline, use
 \fB_printf\fR("%i\\n", 1024);
 .fi
 .RE
-
-.SH NOTES
-\fB_printf\fR handles the following format specifiers: \fB%c\fR, \fB%s\fR, \fB%d\fR, \fB%i\fR.
 
 .SH AUTHORS
 Andrew Lindburg and Athena Deng.
