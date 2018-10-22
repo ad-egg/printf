@@ -1,0 +1,34 @@
+." manpage for _printf
+
+.TH _PRINTF 1 "22 October 2018" "" "User Command"
+
+.SH NAME
+_printf \- formats and prints data from standard input to standard output
+
+.SH SYNOPSIS
+\fB_printf\fR [\fIARGUMENT\fR] ...
+.br
+\fB_printf\fR \fIFORMAT-SPECIFIER\fR, [\fIARGUMENT\fR]
+
+.SH DESCRIPTION
+Takes [\fIARGUMENT\fR] from standard input and prints it to standard output. If there is a format specifier, prints [\fIARGUMENT\fR] according to \fIFORMAT-SPECIFIER\fR.
+
+.SH EXAMPLES
+To print "Hello, world" followed by a newline, use
+.RS
+.nf
+\fB_printf\fR("Hello, world\\n");
+.fi
+.RE
+To print an integer using a format specifier followed by a newline, use
+.RS
+.nf
+\fB_printf\fR("%i\\n", 1204);
+.fi
+.RE
+
+.SH NOTES
+\fB_printf\fR handles the following format specifiers: \fB%c\fR, \fB%s\fR, \fB%d\fR, \fB%i\fR.
+
+.SH AUTHORS
+Written by Andrew Lindburg and Athena Deng.
