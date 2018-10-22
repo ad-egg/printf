@@ -3,7 +3,7 @@
 .TH _PRINTF 1 "22 October 2018" "" "User Command"
 
 .SH NAME
-_printf \- formats and prints data from standard input to standard output
+_printf \- formats and prints data output to stdout
 
 .SH SYNOPSIS
 \fB_printf\fR [\fIARGUMENT\fR] ...
@@ -13,17 +13,23 @@ _printf \- formats and prints data from standard input to standard output
 .SH DESCRIPTION
 Takes [\fIARGUMENT\fR] from standard input and prints it to standard output. If there is a format specifier, prints [\fIARGUMENT\fR] according to \fIFORMAT-SPECIFIER\fR.
 
+.SH RETURN VALUE
+\fB_printf\fR returns the number of characters printed, excluding the null byte used to end output to strings.
+
 .SH EXAMPLES
 To print "Hello, world" followed by a newline, use
+.br
 .RS
 .nf
 \fB_printf\fR("Hello, world\\n");
 .fi
 .RE
+.br
 To print an integer using a format specifier followed by a newline, use
+.br
 .RS
 .nf
-\fB_printf\fR("%i\\n", 1204);
+\fB_printf\fR("%i\\n", 1024);
 .fi
 .RE
 
@@ -31,4 +37,4 @@ To print an integer using a format specifier followed by a newline, use
 \fB_printf\fR handles the following format specifiers: \fB%c\fR, \fB%s\fR, \fB%d\fR, \fB%i\fR.
 
 .SH AUTHORS
-Written by Andrew Lindburg and Athena Deng.
+Andrew Lindburg and Athena Deng.
