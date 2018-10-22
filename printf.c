@@ -30,12 +30,12 @@ int _printf(const char *format, ...)
 			conv_flag = 1;
 			form_it++;
 		}
-		else if (flag == 1)
+		else if (conv_flag == 1)
 		{
 			spec_it = 0;
 			while (conversionspecs[spec_it].spec != NULL)
 			{
-				if (format[form_it] == *(conversionspecs[spec_it]))
+				if (format[form_it] == *(conversionspecs[spec_it].spec))
 					conversionspecs[spec_it].f(form_args, buffer, &buff_it);
 				spec_it++;
 			}
@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 	va_end(form_args);
 
 
-	write(1, format, buffer_it);
+	write(1, format, buff_it);
 
-	return (buffer_size);
+	return (buff_it);
 }
