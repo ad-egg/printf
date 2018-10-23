@@ -3,7 +3,7 @@
 This is the manual page for our `_printf` function.
 ## holberton.h
 This header file contains the prototypes for all the functions used.
-## The task
+## The Task
 For this project we had to write a function that produced output according to a format.
 - Function prototype: `int _printf(const char *format, ...);`
 - Return: the number of characters printed (excluding the null byte used to end output to strings).
@@ -13,8 +13,12 @@ For this project we had to write a function that produced output according to a 
 	- %c
 	- %s
 	- %d
-	- %d
-- 
+	- %i
+- We did not have to reproduce the buffer handling of the C library `printf` function.
+- We did not have to handle the flag characters.
+- We did not have to handle field width.
+- We did not have to handle precision.
+- We did not have to handle the length modifiers.
 ## `*.c`
 - All of the `.c` files along with a `main.c` file are to be compiled with `gcc 4.8.4` on Ubuntu 14.04 LTS with the flags `-Wall` `Werror` `-Westra` and `-pedantic`.
 - The files will be compiled this way:
