@@ -35,8 +35,9 @@ void rev_string(char *s)
  * itoa - converts integer into characters to be printed
  * @n: integer to be converted
  * @s: character string that integer will be converted into
+ * Return: pointer to string
  */
-void itoa(int n, char *s)
+char *itoa(int n, char *s)
 {
 	int i, o, n2;
 
@@ -53,5 +54,7 @@ void itoa(int n, char *s)
 	s[i] = '\0';
 
 	rev_string(s);
+
+	return (s);
 }
 
