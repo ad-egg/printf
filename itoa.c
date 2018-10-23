@@ -1,33 +1,21 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdarg.h>
-
+#include <stdio.h>
 /**
  * rev_string - reverses a string
  * @s: this string will be reversed
  */
-void rev_string(char *s)
+void rev_string(char s[])
 {
-	int a;
-	int b;
-	int c;
-	int len;
+	int i, j = 0, temp;
 
-	a = 0;
-	len = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	b = len - 1;
-
-	while (a < b)
+	while (s[j] != '\0')
+		j++;
+	for (i = 0, j = j - 1; i < j; i++, j--)
 	{
-		c = s[a];
-		s[a] = s[b];
-		s[b] = c;
-		a++;
-		b--;
+		temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
 	}
 }
 
@@ -35,28 +23,21 @@ void rev_string(char *s)
  * itoa - converts integer into characters to be printed
  * @n: integer to be converted
  * @s: character string that integer will be converted into
- * Return: pointer to string
  */
-char *itoa(int n, char *s)
+char *int_to_str(int n)
 {
-	int i, o, n2;
-	char *str;
-
-	str = s;
-	i = 0;
+	int i;
+	char *s;
 
 	if (n < 0)
-		n2 = (n * (-1));
-	else
-		n2 = n;
-	while ((n2 /= 10) > 0)
-		str[i++] = ((n2 % 10) + '0');
+		n = n * -1;
+	do {
+		s[i++] = n % 10 + '0';
+	} while ((n /= 10) > 0);
 	if (n < 0)
-		str[i++] = '-';
-	str[i] = '\0';
-
-	rev_string(str);
-
-	return (str);
+		s[i++] = '-';
+	s[i] = '\0';
+	rev_string(s);
+	return (s);
 }
 
