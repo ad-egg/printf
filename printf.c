@@ -4,13 +4,29 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
+ * find_num_buffer_size - Finds size of buffer which will store int
+ * @n: Integer
+ * Return: Size of buffer to be allocated
+ */
+unsigned int find_num_buffer_size(int n)
+{
+	unsigned int i = 1;
+
+	while (n >= 1)
+	{
+		i++;
+		n /= 10;
+	}
+	return (i);
+}
+/**
  * find_buffer_size - Finds size of buffer
  * @buffer: Buffer
  * Return: Buffer size
  */
 unsigned int find_buffer_size(char *buffer)
 {
-	unsigned int i;
+	unsigned int i = 0;
 
 	while (buffer[i] != '\0')
 	{
@@ -37,6 +53,8 @@ char *make_buffer(va_list form_args, const char *format, unsigned int *f_it)
 		{null, null}
 	};
 
+	if (buffer == null)
+		free(buffer);
 	while ((format[*f_it] != '\0') && (buff_it < 1023))
 	{
 		if (format[*f_it] == '%' && conv_flag == 0)
@@ -74,7 +92,7 @@ int _printf(const char *format, ...)
 {
 	char *buffer;
 	va_list form_args;
-	unsigned int buffer_size, f_it = 0;
+	unsigned int buffer_size = 0, f_it = 0;
 
 
 	va_start(form_args, format);

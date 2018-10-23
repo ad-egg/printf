@@ -26,18 +26,21 @@ void rev_string(char *s)
  */
 char *int_to_str(int n)
 {
-	int i;
-	char *s;
+	int i = 0;
+	char *s = null;
+	unsigned int mall_size = find_num_buffer_size(n);
 
+	s = malloc(mall_size);
+	if (s == null)
+		free(s);
 	if (n < 0)
 		n = n * -1;
 	do {
-		s[i++] = n % 10 + '0';
+		s[i++] = (char)(n % 10 + '0');
 	} while ((n /= 10) > 0);
 	if (n < 0)
 		s[i++] = '-';
 	s[i] = '\0';
-	rev_string(s);
 	return (s);
 }
 
