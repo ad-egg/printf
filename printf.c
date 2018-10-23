@@ -15,7 +15,7 @@ unsigned int find_num_buffer_size(int n)
 	while (n >= 1)
 	{
 		i++;
-		n /= 10
+		n /= 10;
 	}
 	return (i);
 }

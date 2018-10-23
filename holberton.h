@@ -5,6 +5,7 @@
 #define null (void *)0
 int _printf(const char *format, ...);
 char *make_buffer(va_list, const char *format, unsigned int *f_it);
+unsigned int find_num_buffer_size(int n);
 unsigned int find_buffer_size(char *buffer);
 unsigned int c_spec(va_list, char *buffer, unsigned int *buff_it);
 unsigned int s_spec(va_list, char *buffer, unsigned int *buff_it);
