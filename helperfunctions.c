@@ -55,17 +55,26 @@ unsigned int s_spec(va_list form_args, char *buffer, unsigned int *buff_it)
  */
 unsigned int d_spec(va_list form_args, char *buffer, unsigned int *buff_it)
 {
+	char *str = null;
+	int arg = va_arg(form_args, int);
 	unsigned int i = *buff_it, j = 0;
-	char *str;
-	double arg = va_arg(form_args, double);
 
-	str = null;
+	str = int_to_str(arg);
+	rev_string(str);
 	while (str[j] != '\0')
 	{
+		if (i == 1023)
+		{
+			write(1, buffer, 1024);
+			free(buffer);
+			buffer = malloc(1024);
+			i = 0;
+		}
 		buffer[i] = str[j];
 		i++;
 		j++;
 	}
+	free(str);
 	return (i);
 }
 /**
@@ -77,16 +86,25 @@ unsigned int d_spec(va_list form_args, char *buffer, unsigned int *buff_it)
  */
 unsigned int i_spec(va_list form_args, char *buffer, unsigned int *buff_it)
 {
-	unsigned int i = *buff_it, j = 0;
-	char *str;
+	char *str = null;
 	int arg = va_arg(form_args, int);
+	unsigned int i = *buff_it, j = 0;
 
-	str = null;
+	str = int_to_str(arg);
+	rev_string(str);
 	while (str[j] != '\0')
-	{
+	{	
+		if (i == 1023)
+		{
+			write(1, buffer, 1024);
+			free(buffer);
+			buffer = malloc(1024);
+			i = 0;
+		}
 		buffer[i] = str[j];
 		i++;
 		j++;
 	}
+	free(str);
 	return (i);
 }
