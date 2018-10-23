@@ -31,6 +31,8 @@ char *int_to_str(int n)
 	unsigned int mall_size = find_num_buffer_size(n);
 
 	s = malloc(mall_size);
+	if (s == null)
+		free(s);
 	if (n < 0)
 		n = n * -1;
 	do {

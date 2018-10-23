@@ -4,7 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * find_num_buffer_size - Finds size of buffer the str equivalent of int will be stored in
+ * find_num_buffer_size - Finds size of buffer which will store int
  * @n: Integer
  * Return: Size of buffer to be allocated
  */
@@ -53,6 +53,8 @@ char *make_buffer(va_list form_args, const char *format, unsigned int *f_it)
 		{null, null}
 	};
 
+	if (buffer == null)
+		free(buffer);
 	while ((format[*f_it] != '\0') && (buff_it < 1023))
 	{
 		if (format[*f_it] == '%' && conv_flag == 0)
