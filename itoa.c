@@ -5,7 +5,7 @@
  * rev_string - reverses a string
  * @s: this string will be reversed
  */
-void rev_string(char s[])
+void rev_string(char *s)
 {
 	int i, j = 0, temp;
 
@@ -20,9 +20,9 @@ void rev_string(char s[])
 }
 
 /**
- * itoa - converts integer into characters to be printed
+ * int_to_str - converts integer into characters to be printed
  * @n: integer to be converted
- * @s: character string that integer will be converted into
+ * Return: pointer to string
  */
 char *int_to_str(int n)
 {
