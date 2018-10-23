@@ -11,7 +11,7 @@ unsigned int s_spec(va_list, char *buffer, unsigned int *buff_it);
 unsigned int i_spec(va_list, char *buffer, unsigned int *buff_it);
 unsigned int d_spec(va_list, char *buffer, unsigned int *buff_it);
 void rev_string(char *s);
-void itoa(int n, char *s);
+char *itoa(int n);
 /**
  * struct spec_finder - Stores format specifier and respective func
  * @spec: Format sepcifier
