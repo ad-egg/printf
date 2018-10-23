@@ -19,13 +19,8 @@ For this project we had to write a function that produced output according to a 
 - We did not have to handle field width.
 - We did not have to handle precision.
 - We did not have to handle the length modifiers.
-## `*.c`
-- All of the `.c` files along with a `main.c` file are to be compiled with `gcc 4.8.4` on Ubuntu 14.04 LTS with the flags `-Wall` `Werror` `-Westra` and `-pedantic`.
-- The files will be compiled this way:
-```
-$ gcc -Wall -Werror -Wextra -pedantic *.c
-```
-- Each file ends with a new line and contains no more than 5 functions.
+- We may not have more than 5 functions per file.
+- Each function must end with a newline.
 - Global variables are not allowed.
 - All files use the `Betty` style and were checked using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl) and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl).
 - The executable compiled from all of the `.c` files prints to standard output the formatted arguments that were passed to the `_printf` function.
@@ -37,4 +32,9 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c
 	- `va_end (man 3 va_end)`
 	- `va_copy (man 3 va_copy)`
 	- `va_arg (man 3 va_arg)`
-
+## `*.c`
+- All of the `.c` files along with a `main.c` file are to be compiled with `gcc 4.8.4` on Ubuntu 14.04 LTS with the flags `-Wall` `Werror` `-Westra` and `-pedantic`.
+- The files will be compiled this way:
+```
+$ gcc -Wall -Werror -Wextra -pedantic *.c
+```
