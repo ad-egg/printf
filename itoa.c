@@ -40,7 +40,9 @@ void rev_string(char *s)
 char *itoa(int n, char *s)
 {
 	int i, o, n2;
+	char *str;
 
+	str = s;
 	i = 0;
 
 	if (n < 0)
@@ -48,13 +50,13 @@ char *itoa(int n, char *s)
 	else
 		n2 = n;
 	while ((n2 /= 10) > 0)
-		s[i++] = ((n2 % 10) + '0');
+		str[i++] = ((n2 % 10) + '0');
 	if (n < 0)
-		s[i++] = '-';
-	s[i] = '\0';
+		str[i++] = '-';
+	str[i] = '\0';
 
-	rev_string(s);
+	rev_string(str);
 
-	return (s);
+	return (str);
 }
 
