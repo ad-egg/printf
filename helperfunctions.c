@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <stdarg.h>
 /**
  * c_spec - Will add a character to the buffer printed
@@ -13,7 +14,8 @@ unsigned int c_spec(va_list form_args, char *buffer, unsigned int *buff_it)
 {
 	unsigned int i = *buff_it;
 
-	buffer[i] = (char)va_arg(form_args, int);
+	if (i < 1023)
+		buffer[i] = (char)va_arg(form_args, int);
 	return (*buff_it + 1);
 }
 /**
@@ -31,6 +33,13 @@ unsigned int s_spec(va_list form_args, char *buffer, unsigned int *buff_it)
 	str = va_arg(form_args, char *);
 	while (str[j] != '\0')
 	{
+		if (i == 1023)
+		{
+			write(1, buffer, 1024);
+			free(buffer);
+			buffer = malloc(1024);
+			i = 0;
+		}
 		buffer[i] = str[j];
 		i++;
 		j++;
