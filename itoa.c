@@ -30,7 +30,7 @@ char *int_to_str(int n)
 	char *s = null;
 	unsigned int mall_size = find_num_buffer_size(n);
 
-	s = malloc(mall_size);
+	s = malloc(mall_size + 10);
 	if (s == null)
 		free(s);
 	if (n < 0)
