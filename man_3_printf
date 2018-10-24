@@ -18,15 +18,15 @@ Takes [\fIARGUMENT\fR] from standard input and prints it to standard output. If 
 
 .SH OPTIONS
 \fB_printf\fR handles the following format specifiers: \fB%c\fR, \fB%s\fR, \fB%d\fR, \fB%i\fR.
-.br
+.PP
 .RS
-\fB%c\fR:     format specifier for characters
+\fB%c\fR     format specifier for characters
 .br
-\fB%s\fR:     format specifier for strings
+\fB%s\fR     format specifier for strings
 .br
-\fB%d\fR:     format specifier for decimal numbers of base 10
+\fB%d\fR     format specifier for decimal numbers of base 10
 .br
-\fB%i\fR:     format specifier for integers of base 10
+\fB%i\fR     format specifier for integers of base 10
 .RE
 
 .SH EXAMPLES
