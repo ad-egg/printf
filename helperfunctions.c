@@ -57,8 +57,8 @@ unsigned int s_spec(va_list form_args, char *buffer, unsigned int *buff_it)
  */
 unsigned int d_spec(va_list form_args, char *buffer, unsigned int *buff_it)
 {
-	char *str = null;
-	int arg = va_arg(form_args, int);
+	char *str;
+	int arg = va_arg(form_args, int), mflag = 0;
 	unsigned int i = *buff_it, j = 0;
 
 	str = int_to_str(arg);
@@ -74,9 +74,17 @@ unsigned int d_spec(va_list form_args, char *buffer, unsigned int *buff_it)
 				free(buffer);
 			i = 0;
 		}
-		buffer[i] = str[j];
+		if (arg < 0 && mflag == 0)
+		{
+			mflag = 1;
+			buffer[i] = '-';
+		}
+		else if (arg >= 0 || mflag == 1)
+		{
+			buffer[i] = str[j];
+			j++;
+		}
 		i++;
-		j++;
 	}
 	free(str);
 	return (i);
@@ -90,7 +98,7 @@ unsigned int d_spec(va_list form_args, char *buffer, unsigned int *buff_it)
  */
 unsigned int i_spec(va_list form_args, char *buffer, unsigned int *buff_it)
 {
-	char *str = null;
+	char *str;
 	int arg = va_arg(form_args, int);
 	unsigned int i = *buff_it, j = 0;
 
