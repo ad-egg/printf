@@ -16,8 +16,18 @@ Takes [\fIARGUMENT\fR] from standard input and prints it to standard output. If 
 .SH RETURN VALUE
 \fB_printf\fR returns the number of characters printed, excluding the null byte used to end output to strings.
 
-.SH NOTES
+.SH OPTIONS
 \fB_printf\fR handles the following format specifiers: \fB%c\fR, \fB%s\fR, \fB%d\fR, \fB%i\fR.
+.PP
+.RS
+\fB%c\fR     format specifier for characters
+.br
+\fB%s\fR     format specifier for strings
+.br
+\fB%d\fR     format specifier for decimal numbers of base 10
+.br
+\fB%i\fR     format specifier for integers of base 10
+.RE
 
 .SH EXAMPLES
 To print "Hello, world" followed by a newline, use
