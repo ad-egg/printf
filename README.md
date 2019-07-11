@@ -1,6 +1,7 @@
 # printf 
 ## man_3_printf
 This is the manual page for our `_printf` function.
+![manual page for our printf function](images/man_3_printf.png)
 ## holberton.h
 This header file contains the prototypes for all the functions used.
 ## The Task
