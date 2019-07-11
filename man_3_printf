@@ -1,6 +1,6 @@
 ." manpage for _printf
 
-.TH _PRINTF 1 "22 October 2018" "" "User Command"
+.TH _PRINTF 3 "22 October 2018" "" "User Command"
 
 .SH NAME
 _printf \- formats and prints data output to stdout
