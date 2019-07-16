@@ -33,9 +33,34 @@ For this project we had to write a function that produced output according to a 
 	- `va_end (man 3 va_end)`
 	- `va_copy (man 3 va_copy)`
 	- `va_arg (man 3 va_arg)`
-## `*.c`
+## How to use
 - All of the `.c` files along with a `main.c` file are to be compiled with `gcc 4.8.4` on Ubuntu 14.04 LTS with the flags `-Wall` `Werror` `-Westra` and `-pedantic`.
 - The files will be compiled this way:
 ```
 $ gcc -Wall -Werror -Wextra -pedantic *.c
+```
+
+In the `main.c` file, use the `_printf` function like so:
+```
+$ cat main.c
+#include "holberton.h"
+
+/**
+ * main - main function of program
+ * Return: always 0
+ */
+int main(void)
+{
+	int num;
+	char *string;
+	
+	num = 12;
+	string = "Hello, world!"
+	_printf("%s I am not %i years old!\n", string, num);
+	return (0);
+}
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o myprogram
+$ ./myprogram
+Hello, world! I am not 12 years old!
+$ 
 ```
