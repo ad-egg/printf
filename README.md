@@ -30,6 +30,9 @@ For this project we had to write a function that produced output according to a 
 	- `va_copy (man 3 va_copy)`
 	- `va_arg (man 3 va_arg)`
 
+## Challenges
+- managing dynamically allocated memory
+- handling unexpected user input like `%%c` or `%                 i`
 ## man_3_printf
 This is the manual page for our `_printf` function.
 ![manual page for our printf function](images/man_3_printf.png)
