@@ -33,6 +33,7 @@ For this project we had to write a function that produced output according to a 
 ## Challenges
 - managing dynamically allocated memory
 - handling unexpected user input like `%%c` or `%                 i`
+- correctly formatting a manual page
 ## man_3_printf
 This is the manual page for our `_printf` function.
 ![manual page for our printf function](images/man_3_printf.png)
