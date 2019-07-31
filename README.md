@@ -35,7 +35,10 @@ For this project we had to write a function that produced output according to a 
 - handling unexpected user input like `%%c` or `%                 i`
 - correctly formatting a manual page
 ## man_3_printf
-This is the manual page for our `_printf` function.
+This is the manual page for our `_printf` function. To view it as a manual page like the image below, run this command:
+```
+$ man ./man_3_printf
+```
 ![manual page for our printf function](images/man_3_printf.png)
 ## How to use
 - All of the `.c` files along with a `main.c` file are to be compiled with `gcc 4.8.4` on Ubuntu 14.04 LTS with the flags `-Wall` `Werror` `-Westra` and `-pedantic`.
